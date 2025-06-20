@@ -23,7 +23,7 @@
 
   h1 {
     font-size: 3rem;
-    margin-top: 2rem;
+    margin-top: 100px;
   }
 
   h2 {
@@ -118,6 +118,36 @@
   max-width: 700px;
 }
 
+.timer-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('fondo.jpg') center/cover no-repeat;
+  color: #fbb034;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+    
+
+    .timer {
+      font-size: 32px;
+      margin-right: 15px;
+      color: #fbb034;
+    }
+
+    .icon {
+      margin: 0 10px;
+      color: #fbb034;
+    }
+
 
   @media (max-width: 768px) {
     .garantia-container {
@@ -133,6 +163,17 @@
   .garantia-right p {
     text-align: center;
   }
+
+    .timer-banner {
+        flex-direction: column;
+        font-size: 16px;
+      }
+
+      .timer {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+  
   }
 
   @media (max-width: 600px) {
@@ -152,6 +193,11 @@
 
 </head>
 <body>
+
+  <div class="timer-banner">
+    <div class="timer" id="countdown">01 : 00 : 00</div>
+    <div><i class="fas fa-stopwatch icon"></i>Estás a un solo click de transformar tu vida con el libro digital <strong>"El Arte de la Fortaleza"</strong></div>
+  </div>
 
   <!-- TÍTULO -->
   <h1>EL ARTE DE LA FORTALEZA ESTOICA</h1>
@@ -232,6 +278,81 @@
   </div>
 </section>
 
+<section style="
+  padding: 80px 20px 180px;
+  background: url('libro_individual.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Georgia', serif;
+  color: #ffcc33;
+  text-align: center;
+  border-top: 4px solid #ffcc33;
+  border-bottom: 4px solid #ffcc33;
+">
+
+  <div style="
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid #ffcc33;
+    border-radius: 20px;
+    padding: 40px;
+    margin: auto;
+    max-width: 800px;
+  ">
+    <div style="font-size: 24px; font-style: italic; margin-bottom: 30px;">
+      ¡Haz clic en el botón "Quiero mi libro"!
+    </div>
+
+    <div style="font-size: 48px; font-weight: bold; margin-bottom: 10px;">
+      OFERTA ESPECIAL
+    </div>
+
+    <div style="font-size: 60px; font-weight: bold;">
+      <span style="font-size: 30px; vertical-align: super;">USD</span> 9.<sup>99</sup>
+      <span style="font-size: 24px; text-decoration: line-through; margin-left: 10px;">
+        ANTES 15
+      </span>
+    </div>
+
+    <div style="margin-top: 50px;">
+      <a href="https://tuenlace.com"
+         style="
+           background-color: #2b1e1a;
+           color: #ffcc66;
+           padding: 20px 50px;
+           font-size: 40px;
+           font-family: 'Georgia', serif;
+           font-weight: bold;
+           border: 4px solid #ffcc66;
+           border-radius: 20px;
+           text-decoration: none;
+           box-shadow: 0 0 25px rgba(255, 204, 102, 0.6);
+           animation: pulse 1.5s infinite;
+           display: inline-block;
+         ">
+        Quiero mi libro
+      </a>
+    </div>
+  </div>
+
+  <style>
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    a[style*="animation: pulse"] {
+      animation: pulse 1.5s infinite;
+      transition: transform 0.3s;
+    }
+
+    a[style*="animation: pulse"]:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 35px rgba(255, 204, 102, 0.9);
+    }
+  </style>
+
+</section>
+
+
 <section style="background-color: #000; color: #fbb034; font-family: Georgia, serif; text-align: center; padding: 40px 20px;">
   <!-- Sellos de garantía -->
   <div style="margin-bottom: 30px;">
@@ -292,8 +413,31 @@
   </a>
 </div>
 </section>
+<script>
+  function startTimer(duration, display) {
+    let timer = duration, hours, minutes, seconds;
 
+    setInterval(function () {
+      hours = Math.floor(timer / 3600);
+      minutes = Math.floor((timer % 3600) / 60);
+      seconds = timer % 60;
 
+      display.textContent =
+        (hours < 10 ? "0" + hours : hours) + " : " +
+        (minutes < 10 ? "0" + minutes : minutes) + " : " +
+        (seconds < 10 ? "0" + seconds : seconds);
 
+      if (--timer < 0) {
+        timer = duration; // Reinicia el contador automáticamente
+      }
+    }, 1000);
+  }
+
+  window.onload = function () {
+    const fifteenMinutes = 15 * 60; // 15 minutos
+    const display = document.getElementById('countdown');
+    startTimer(fifteenMinutes, display);
+  };
+</script>
 </body>
 </html>
