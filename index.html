@@ -4,82 +4,152 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trilogía Estoica</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      background-color: #000;
-      color: #ffd700;
-      font-family: 'Cinzel Decorative', serif;
-      text-align: center;
-      padding: 0 15px;
-    }
+<style>
+  body {
+    margin: 0;
+    background-color: #000;
+    color: #ffd700;
+    font-family: 'Cinzel Decorative', serif;
+    text-align: center;
+    padding: 0 15px;
+  }
 
-    h1, h2 {
-      letter-spacing: 1.5px;
-    }
+  h1, h2 {
+    letter-spacing: 1.5px;
+  }
 
+  h1 {
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .book-image {
+    max-width: 400px;
+    width: 90%;
+    margin: 1rem auto 2rem;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .texto-epico {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #fff;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    font-family: Georgia, serif;
+  }
+
+  strong {
+    color: #ffd700;
+  }
+
+  /* NUEVA SECCIÓN DE GARANTÍA Y LOGOS */
+.garantia-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;         /* CENTRADO VERTICAL */
+  justify-content: center;     /* CENTRADO HORIZONTAL */
+  background-color: black;
+  color: white;
+  padding: 3rem 1rem;
+  gap: 2rem;
+  text-align: left;
+}
+
+  .garantia-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  flex: 1 1;
+}
+
+.logo-grande {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+}
+
+.logo-pago {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+}
+.garantia-right {
+  flex: 1 1;
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.garantia-right p {
+  margin: 0;
+  max-width: 700px;
+}
+
+
+  @media (max-width: 768px) {
+    .garantia-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .garantia-right {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .garantia-right p {
+    text-align: center;
+  }
+  }
+
+  @media (max-width: 600px) {
     h1 {
-      font-size: 3rem;
-      margin-top: 2rem;
+      font-size: 2rem;
     }
 
     h2 {
-      font-size: 2rem;
-      margin-top: 3rem;
-    }
-
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      margin: 2rem 0;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .book-image {
-      max-width: 400px;
-      width: 90%;
-      margin: 1rem auto 2rem;
-      display: block;
-      border-radius: 8px;
+      font-size: 1.5rem;
     }
 
     .texto-epico {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      color: #fff;
-      max-width: 900px;
-      margin: 0 auto 3rem;
-      font-family: Georgia, serif;
+      font-size: 1rem;
     }
+  }
+</style>
 
-    strong {
-      color: #ffd700;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-      }
-
-      .texto-epico {
-        font-size: 1rem;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -141,23 +211,89 @@
     <!-- Lista de capítulos alineada a la izquierda -->
     <div style="flex: 1 1 400px; color: #000; font-family: Georgia, serif; font-size: 1.2rem; line-height: 2;">
       <ul style="list-style: none; padding: 0; margin: 0;">
-        <li>🔘 ¿Qué es el Estoicismo?</li>
-        <li>🔘 Libertad y Estoicismo</li>
-        <li>🔘 Estoicismo y Autocontrol</li>
-        <li>🔘 Dolor y Estoicismo</li>
-        <li>🔘 Deja de Ser Débil</li>
-        <li>🔘 Combatir la Humillación</li>
-        <li>🔘 Te Enseñaré a Tener una Mente Fuerte</li>
-        <li>🔘 100 Frases que Debes Grabarte en Tu Mente</li>
-        <li>🔘 Mantente Estoico</li>
-        <li>🔘 No Seas Como Tus Enemigos</li>
-        <li>🔘 Deja de Depender de los Demás</li>
-        <li>🔘 No Pierdas el Tiempo</li>
-        <li>🔘 Enciende Tu Llama Interior</li>
+        <li>🔘 El poder de la razón: vivir conforme a la naturaleza</li>
+        <li>🔘 Lo que depende de ti y lo que no</li>
+        <li>🔘 Las cuatro virtudes cardinales: sabiduría, justicia, templanza y coraje</li>
+        <li>🔘 La dicotomía del control: libertad interior</li>
+        <li>🔘 Cómo afrontar la adversidad con serenidad</li>
+        <li>🔘 La muerte y la fugacidad de la vida</li>
+        <li>🔘 El valor de la autodisciplina</li>
+        <li>🔘 El rol del deber y la acción virtuosa</li>
+        <li>🔘 Relaciones humanas: compasión sin apego</li>
+        <li>🔘 Cómo manejar emociones intensas</li>
+        <li>🔘 Silencio, contemplación y journaling estoico</li>
+        <li>🔘 Estoicismo y liderazgo: gobernarse para gobernar</li>
+        <li>🔘 Trabajo, ambición y propósito con virtud</li>
+        <li>🔘 Tecnología, redes sociales y el alma tranquila</li>
+        <li>🔘 Minimalismo estoico: querer menos, ser más</li>
       </ul>
     </div>
 
   </div>
 </section>
+
+<section style="background-color: #000; color: #fbb034; font-family: Georgia, serif; text-align: center; padding: 40px 20px;">
+  <!-- Sellos de garantía -->
+  <div style="margin-bottom: 30px;">
+    <!-- Aquí van tus imágenes de sellos -->
+    <img src="7garantia.png" alt="Garantía 7 días" style="height: 100px; margin: 10px;">
+    <img src="100garantia.png" alt="Satisfacción garantizada" style="height: 100px; margin: 10px;">
+  </div>
+
+  <!-- Iconos de medios de pago -->
+  <div style="margin-bottom: 20px;">
+    <!-- Aquí van los iconos de pago -->
+    <img src="hotmart_logo.png" alt="Hotmart" style="height: 30px; margin: 5px;">
+    <img src="visa_logo.png" alt="Visa" style="height: 20px; margin: 5px;">
+    <img src="master_logo.png" alt="Mastercard" style="height: 30px; margin: 5px;">
+    <img src="american_logo.png" alt="American Express" style="height: 30px; margin: 5px;">
+    <img src="paypal_logo.png" alt="PayPal" style="height: 30px; margin: 5px;">
+  </div>
+
+  <!-- Texto de seguridad y garantía -->
+  <div style="color: #fbb034; font-size: 14px; max-width: 800px; margin: 0 auto;">
+    <p><strong>PRIVACIDAD:</strong> TU INFORMACIÓN ESTÁ 100% SEGURA.<br>
+    <strong>COMPRA SEGURA:</strong> AMBIENTE SEGURO Y AUTENTICADO.<br>
+    <strong>ENTREGA POR EMAIL:</strong> ACCESO AL PRODUCTO ENTREGADO POR EMAIL.<br>
+    <strong>CONTENIDO APROBADO:</strong> 100% REVISADO Y APROBADO.</p>
+  </div>
+
+  <!-- Texto legal -->
+  <div style="color: #fbb034; font-size: 12px; max-width: 900px; margin: 30px auto; text-align: justify;">
+    <p>ESTE PRODUCTO ES COMERCIALIZADO CON EL APOYO DE HOTMART. LA PLATAFORMA NO REALIZA UN CONTROL EDITORIAL PREVIO DE LOS PRODUCTOS VENDIDOS, NI EVALÚA EL TECNICISMO Y LA EXPERIENCIA DE QUIENES LOS ELABORAN. LA EXISTENCIA DE UN PRODUCTO Y SU ADQUISICIÓN, A TRAVÉS DE LA PLATAFORMA, NO PUEDE CONSIDERARSE GARANTÍA DE CALIDAD DE CONTENIDO Y RESULTADO, EN NINGÚN CASO. AL ADQUIRIRLO, EL COMPRADOR DECLARA CONOCER ESTA INFORMACIÓN. PUEDES ACCEDER A LOS TÉRMINOS Y POLÍTICAS DE HOTMART <a href="#" style="color: #fbb034; text-decoration: underline;">AQUÍ</a>, INCLUSO ANTES DE FINALIZAR LA COMPRA.</p>
+  </div>
+
+  <!-- Logos de respaldo -->
+  <!--
+  <div style="margin-bottom: 30px;">
+    Aquí van los logos de respaldo
+    <img src="ruta-a-icono-hotmart-respaldo.png" alt="Con el respaldo de Hotmart" style="height: 40px; margin: 10px;">
+    <img src="ruta-a-icono-segundo-respaldo.png" alt="Segundo respaldo" style="height: 40px; margin: 10px;">
+  </div>
+  -->
+  <!-- Sección redes sociales -->
+  <div style="background-color: #fbb034; color: #000; padding: 20px 0; font-weight: bold; font-size: 24px;">
+    NUESTRAS REDES
+  </div>
+
+  <!-- Iconos redes sociales -->
+<div style="background-color: #000; padding: 20px;">
+  <a href="https://www.facebook.com/profile.php?id=61576728899822" target="_blank" style="color: #1877f2; margin: 0 15px; font-size: 30px;">
+    <i class="fab fa-facebook"></i>
+  </a>
+  <a href="https://www.instagram.com/estoicodigital/" target="_blank" style="color: #E1306C; margin: 0 15px; font-size: 30px;">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.tiktok.com/@estoico_digital" target="_blank" style="color: #fff; margin: 0 15px; font-size: 30px;">
+    <i class="fab fa-tiktok"></i>
+  </a>
+  <a href="https://youtube.com/@estoico_digital-x6s?si=Yxl4krHqoFkXP1Zl" target="_blank" style="color: #FF0000; margin: 0 15px; font-size: 30px;">
+    <i class="fab fa-youtube"></i>
+  </a>
+</div>
+</section>
+
+
+
 </body>
 </html>
