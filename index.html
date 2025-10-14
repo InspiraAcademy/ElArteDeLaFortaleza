@@ -72,8 +72,8 @@
 .garantia-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;         /* CENTRADO VERTICAL */
-  justify-content: center;     /* CENTRADO HORIZONTAL */
+  align-items: center;
+  justify-content: center;
   background-color: black;
   color: white;
   padding: 3rem 1rem;
@@ -151,7 +151,139 @@
   font-size: 1.2rem;
 }
 
+/* === NUEVA SECCIÓN: LA DECISIÓN === */
+.seccion-decision {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 80px 20px;
+  color: #fff;
+  font-family: Georgia, serif;
+}
 
+.decision-titulo {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  color: #ffd700;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.decision-contenido {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 2;
+  text-align: center;
+}
+
+.decision-contenido p {
+  margin-bottom: 30px;
+}
+
+.decision-contenido strong {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.decision-quote {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #fbb034;
+  margin-top: 40px;
+  padding: 20px;
+  border-left: 4px solid #ffd700;
+  background-color: rgba(255, 215, 0, 0.05);
+}
+
+/* === NUEVA SECCIÓN: FAQ === */
+.faq-section {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  padding: 80px 20px;
+  font-family: Georgia, serif;
+}
+
+.faq-titulo {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.faq-question {
+  background: linear-gradient(135deg, #3d3d3d 0%, #2a2a2a 100%);
+  color: #ffd700;
+  padding: 20px 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.faq-question:hover {
+  background: linear-gradient(135deg, #4a4a4a 0%, #333333 100%);
+  border-left-color: #ffd700;
+}
+
+.faq-question.active {
+  background: linear-gradient(135deg, #ffd700 0%, #fbb034 100%);
+  color: #000;
+  border-left-color: #ffd700;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 15px;
+}
+
+.faq-question.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* CORREGIDO: Respuestas ocultas por defecto */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #e0e0e0;
+  padding: 0 25px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.4s ease;
+  border-left: 4px solid #ffd700;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.faq-answer.active {
+  max-height: 500px;
+  padding: 25px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* RESPONSIVE */
   @media (max-width: 768px) {
     .garantia-container {
     flex-direction: column;
@@ -179,6 +311,42 @@
       .capitulo li {
     font-size: 0.8rem;
   }
+
+  /* Responsive para sección decisión */
+  .decision-titulo {
+    font-size: 2rem;
+  }
+
+  .decision-contenido {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .decision-quote {
+    font-size: 1.1rem;
+  }
+
+  /* Responsive FAQ */
+  .faq-titulo {
+    font-size: 2rem;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    padding: 15px 20px;
+  }
+
+  .faq-answer {
+    font-size: 0.95rem;
+  }
+
+  .faq-answer.active {
+    padding: 20px;
+  }
+
+  .faq-icon {
+    font-size: 1.2rem;
+  }
   
   }
 
@@ -193,6 +361,32 @@
 
     .texto-epico {
       font-size: 1rem;
+    }
+
+    .decision-titulo {
+      font-size: 1.7rem;
+    }
+
+    .decision-contenido {
+      font-size: 0.95rem;
+      padding: 0 10px;
+    }
+
+    .faq-titulo {
+      font-size: 1.7rem;
+    }
+
+    .faq-question {
+      font-size: 0.9rem;
+      padding: 12px 15px;
+    }
+
+    .faq-answer {
+      font-size: 0.85rem;
+    }
+
+    .faq-answer.active {
+      padding: 15px;
     }
   }
 </style>
@@ -221,14 +415,14 @@
 
     <br><br>
 
-    <strong>“El Arte de la Fortaleza Estoica”</strong> es una guía para quienes están listos a dejar de ser víctimas de las circunstancias y comenzar a vivir con propósito, razón y coraje. Tu libertad comienza con el dominio de ti mismo.
+    <strong>"El Arte de la Fortaleza Estoica"</strong> es una guía para quienes están listos a dejar de ser víctimas de las circunstancias y comenzar a vivir con propósito, razón y coraje. Tu libertad comienza con el dominio de ti mismo.
   </div>
 
   <!-- LIBRO 1 -->
 <h2>LIBRO DIGITAL:<br> El Arte de la Fortaleza Estoica</h2>
 <img src="libro_individual.png" alt="El Arte de la Fortaleza Estoica" class="book-image" />
 <div class="texto-epico">
-  <strong>“El Arte de la Fortaleza Estoica”</strong> no es solo un libro, es una declaración de guerra contra la fragilidad interna. Aquí encontrarás la esencia atemporal del estoicismo clásico llevada al terreno feroz del mundo moderno. ¿Cómo mantener la templanza en medio de la tormenta? ¿Cómo avanzar con firmeza cuando todo tiembla?
+  <strong>"El Arte de la Fortaleza Estoica"</strong> no es solo un libro, es una declaración de guerra contra la fragilidad interna. Aquí encontrarás la esencia atemporal del estoicismo clásico llevada al terreno feroz del mundo moderno. ¿Cómo mantener la templanza en medio de la tormenta? ¿Cómo avanzar con firmeza cuando todo tiembla?
 
   <br><br>
 
@@ -263,21 +457,21 @@
     <!-- Lista de capítulos alineada a la izquierda -->
     <div class="capitulo" style="flex: 1 1 400px; color: #000; font-family: Georgia, serif; font-size: 1.2rem; line-height: 2;">
       <ul style="list-style: none; padding: 0; margin: 0;">
-        <li>🔘 El poder de la razón: vivir conforme a la naturaleza</li>
-        <li>🔘 Lo que depende de ti y lo que no</li>
-        <li>🔘 Las cuatro virtudes cardinales: sabiduría, justicia, templanza y coraje</li>
-        <li>🔘 La dicotomía del control: libertad interior</li>
-        <li>🔘 Cómo afrontar la adversidad con serenidad</li>
-        <li>🔘 La muerte y la fugacidad de la vida</li>
-        <li>🔘 El valor de la autodisciplina</li>
-        <li>🔘 El rol del deber y la acción virtuosa</li>
-        <li>🔘 Relaciones humanas: compasión sin apego</li>
-        <li>🔘 Cómo manejar emociones intensas</li>
-        <li>🔘 Silencio, contemplación y journaling estoico</li>
-        <li>🔘 Estoicismo y liderazgo: gobernarse para gobernar</li>
-        <li>🔘 Trabajo, ambición y propósito con virtud</li>
-        <li>🔘 Tecnología, redes sociales y el alma tranquila</li>
-        <li>🔘 Minimalismo estoico: querer menos, ser más</li>
+        <li>🔘 Capitulo 1: El poder de la razón: vivir conforme a la naturaleza</li>
+        <li>🔘 Capitulo 2: Lo que depende de ti y lo que no</li>
+        <li>🔘 Capitulo 3: Las cuatro virtudes estoicas</li>
+        <li>🔘 Capitulo 4:La dicotomía del control</li>
+        <li>🔘 Capitulo 5: Cómo afrontar la adversidad con serenidad</li>
+        <li>🔘 Capitulo 6: La muerte y la fugacidad de la vida</li>
+        <li>🔘 Capitulo 7: El valor de la autodisciplina</li>
+        <li>🔘 Capitulo 8: El rol del deber y la acción virtuosa</li>
+        <li>🔘 Capitulo 9: Relaciones humanas: compasión sin apego</li>
+        <li>🔘 Capitulo 10: Cómo manejar emociones intensas</li>
+        <li>🔘 Capitulo 11: Silencio, contemplación y journaling estoico</li>
+        <li>🔘 Capitulo 12: Estoicismo y liderazgo: gobernarse para gobernar</li>
+        <li>🔘 Capitulo 13: El Propósito Estoico: Vivir con Excelencia</li>
+        <li>🔘 Capitulo 14: Cómo Cultivar una Vida Diaria Estoica</li>
+        <li>🔘 Capítulo 15: Conclusión – El Camino Estoico en el Mundo Moderno</li>
       </ul>
     </div>
 
@@ -358,18 +552,135 @@
 
 </section>
 
+<!-- ========================================== -->
+<!-- NUEVA SECCIÓN: LA DECISIÓN ESTÁ EN TUS MANOS -->
+<!-- ========================================== -->
+<section class="seccion-decision">
+  <h2 class="decision-titulo">LA DECISIÓN ESTÁ EN TUS MANOS</h2>
+  
+  <div class="decision-contenido">
+    <p>
+      Hoy, este libro está disponible por solo <strong>$9.99 USD</strong>. Puede parecer un simple ebook, pero en realidad es una herramienta que puede transformar tu mentalidad y forjar tu carácter interno.
+    </p>
+
+    <p>
+      Piensa en esto: <strong>¿Cuántas veces has gastado dinero en cosas pasajeras como un café, una cena o una suscripción que nunca aprovechaste?</strong>
+    </p>
+
+    <p>
+      Pero <strong>"El Arte de la Fortaleza Estoica"</strong> no es un gasto, es una inversión en ti mismo, en tu mente, en tu futuro y en la vida que mereces vivir. Cada día que pasas sin tomar acción es una oportunidad perdida para cultivar la fortaleza interna que buscas.
+    </p>
+
+    <div class="decision-quote">
+      Como dijo Marco Aurelio: <strong>"Tienes poder sobre tu mente, no sobre los acontecimientos externos. Date cuenta de esto, y encontrarás fortaleza."</strong>
+    </div>
+
+    <p style="margin-top: 30px;">
+      Si sigues pensando igual, actuarás igual y obtendrás los mismos resultados. Es momento de hacer algo diferente y empezar a construir la fortaleza mental que realmente anhelas.
+    </p>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- NUEVA SECCIÓN: PREGUNTAS FRECUENTES -->
+<!-- ========================================== -->
+<section class="faq-section">
+  <h2 class="faq-titulo">Preguntas Frecuentes</h2>
+  
+  <div class="faq-container">
+    
+    <!-- Pregunta 1 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>¿De qué trata "El Arte de la Fortaleza Estoica"?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Este libro es una guía práctica y profunda que te enseña los principios fundamentales del estoicismo clásico aplicados al mundo moderno. Descubrirás cómo cultivar fortaleza mental, dominio emocional y claridad de propósito a través de las enseñanzas de los grandes maestros estoicos: Marco Aurelio, Epicteto y Séneca. Es un entrenamiento para tu mente y tu carácter.
+      </div>
+    </div>
+
+    <!-- Pregunta 2 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>¿Para quién es este libro?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Para hombres y mujeres que buscan trascender en la vida y que aspiran a lograr sus sueños más profundos, aunque aún no sepan exactamente cómo hacerlo. Si sientes que mereces más de lo que tienes ahora y estás listo para tomar control de tu mente y tus emociones, este libro es para ti.
+      </div>
+    </div>
+
+    <!-- Pregunta 3 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>¿Qué voy a aprender?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Aprenderás a reprogramar tu mente para desarrollar autodisciplina, resiliencia y equilibrio emocional. Descubrirás cómo transformar el caos y la adversidad en oportunidades de crecimiento. A través de técnicas sencillas pero poderosas, eliminarás los bloqueos internos que te han limitado y comenzarás a manifestar la vida que realmente deseas vivir con propósito y convicción.
+      </div>
+    </div>
+
+    <!-- Pregunta 4 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>¿Cómo funciona la garantía?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Contarás con un período de garantía durante el cual podrás evaluar el contenido del libro. Si dentro de ese tiempo consideras que el ebook no cumplió con tus expectativas, podrás solicitar la devolución total del monto pagado, sin complicaciones ni preguntas innecesarias.
+      </div>
+    </div>
+
+    <!-- Pregunta 5 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>¿Cómo acceder al libro?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Después de completar tu compra, recibirás un correo electrónico con el enlace de acceso al ebook desde cualquier dispositivo (computadora, teléfono o tablet). También puedes ingresar directamente a Hotmart y seguir estos pasos:<br><br>
+        1️⃣ Entra a hotmart.com y selecciona "Entrar"<br>
+        2️⃣ Dirígete al menú lateral y elige "Mi cuenta"<br>
+        3️⃣ Haz clic en "Mis compras" y encontrarás allí el libro disponible para ti
+      </div>
+    </div>
+
+    <!-- Pregunta 6 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>¿Cómo hago para comprar?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Para adquirir tu copia de "El Arte de la Fortaleza Estoica", simplemente presiona el botón "Quiero mi libro", completa el formulario con tus datos en la plataforma de pago segura de Hotmart y finaliza el proceso. En cuestión de minutos tendrás acceso inmediato al ebook en tu correo electrónico.
+      </div>
+    </div>
+
+    <!-- Pregunta 7 (Adicional) -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>¿Por qué este libro es diferente a otros sobre estoicismo?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        A diferencia de otros libros teóricos, "El Arte de la Fortaleza Estoica" combina filosofía clásica con aplicaciones prácticas para el mundo actual. No solo aprenderás qué pensaban los estoicos, sino cómo aplicar esos principios en tu vida diaria para lograr resultados tangibles: mayor claridad mental, control emocional y una vida con propósito inquebrantable.
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <section style="background-color: #000; color: #fbb034; font-family: Georgia, serif; text-align: center; padding: 40px 20px;">
   <!-- Sellos de garantía -->
   <div style="margin-bottom: 30px;">
-    <!-- Aquí van tus imágenes de sellos -->
     <img src="7garantia.png" alt="Garantía 7 días" style="height: 100px; margin: 10px;">
     <img src="100garantia.png" alt="Satisfacción garantizada" style="height: 100px; margin: 10px;">
   </div>
 
   <!-- Iconos de medios de pago -->
   <div style="margin-bottom: 20px;">
-    <!-- Aquí van los iconos de pago -->
     <img src="hotmart_logo.png" alt="Hotmart" style="height: 30px; margin: 5px;">
     <img src="visa_logo.png" alt="Visa" style="height: 20px; margin: 5px;">
     <img src="master_logo.png" alt="Mastercard" style="height: 30px; margin: 5px;">
@@ -390,14 +701,6 @@
     <p>ESTE PRODUCTO ES COMERCIALIZADO CON EL APOYO DE HOTMART. LA PLATAFORMA NO REALIZA UN CONTROL EDITORIAL PREVIO DE LOS PRODUCTOS VENDIDOS, NI EVALÚA EL TECNICISMO Y LA EXPERIENCIA DE QUIENES LOS ELABORAN. LA EXISTENCIA DE UN PRODUCTO Y SU ADQUISICIÓN, A TRAVÉS DE LA PLATAFORMA, NO PUEDE CONSIDERARSE GARANTÍA DE CALIDAD DE CONTENIDO Y RESULTADO, EN NINGÚN CASO. AL ADQUIRIRLO, EL COMPRADOR DECLARA CONOCER ESTA INFORMACIÓN. PUEDES ACCEDER A LOS TÉRMINOS Y POLÍTICAS DE HOTMART <a href="#" style="color: #fbb034; text-decoration: underline;">AQUÍ</a>, INCLUSO ANTES DE FINALIZAR LA COMPRA.</p>
   </div>
 
-  <!-- Logos de respaldo -->
-  <!--
-  <div style="margin-bottom: 30px;">
-    Aquí van los logos de respaldo
-    <img src="ruta-a-icono-hotmart-respaldo.png" alt="Con el respaldo de Hotmart" style="height: 40px; margin: 10px;">
-    <img src="ruta-a-icono-segundo-respaldo.png" alt="Segundo respaldo" style="height: 40px; margin: 10px;">
-  </div>
-  -->
   <!-- Sección redes sociales -->
   <div style="background-color: #fbb034; color: #000; padding: 20px 0; font-weight: bold; font-size: 24px;">
     NUESTRAS REDES
@@ -419,7 +722,9 @@
   </a>
 </div>
 </section>
+
 <script>
+  // Timer countdown
   function startTimer(duration, display) {
     let timer = duration, hours, minutes, seconds;
 
@@ -434,16 +739,40 @@
         (seconds < 10 ? "0" + seconds : seconds);
 
       if (--timer < 0) {
-        timer = duration; // Reinicia el contador automáticamente
+        timer = duration;
       }
     }, 1000);
   }
 
   window.onload = function () {
-    const fifteenMinutes = 15 * 60; // 15 minutos
+    const fifteenMinutes = 15 * 60;
     const display = document.getElementById('countdown');
     startTimer(fifteenMinutes, display);
   };
+
+  // FAQ Toggle Function - CORREGIDO
+  function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const allQuestions = document.querySelectorAll('.faq-question');
+    const allAnswers = document.querySelectorAll('.faq-answer');
+    
+    // Cerrar todas las otras respuestas
+    allQuestions.forEach(q => {
+      if (q !== element) {
+        q.classList.remove('active');
+      }
+    });
+    
+    allAnswers.forEach(a => {
+      if (a !== answer) {
+        a.classList.remove('active');
+      }
+    });
+    
+    // Toggle la respuesta actual
+    element.classList.toggle('active');
+    answer.classList.toggle('active');
+  }
 </script>
 </body>
 </html>
